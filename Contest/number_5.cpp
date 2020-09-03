@@ -2,6 +2,16 @@
 #include <stdio.h> 
 using namespace std; 
 #define lli long long int 
+long long binpow(long long a, long long b) {
+    long long res = 1;
+    while (b > 0) {
+        if (b & 1)
+            res = res * a;
+        a = a * a;
+        b >>= 1;
+    }
+    return res;
+}
 void printSubset(lli n, int k) 
 { 
     vector<lli> answer; 
@@ -14,10 +24,10 @@ void printSubset(lli n, int k)
         lli p = log2(n); 
   
         // Now insert k^p in the answer 
-        answer.push_back(pow(k, p)); 
+        answer.push_back(binpow(k, p)); 
   
         // update n 
-        n %= (int)pow(2, p); 
+        n %= (int)binpow(2, p); 
     } 
       
      
