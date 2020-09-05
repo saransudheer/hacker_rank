@@ -1,43 +1,34 @@
-#include <bits/stdc++.h>
-using namespace std;
-int largest(long int arr[], int n) 
-{ 
-    int i; 
-    int max = arr[0]; 
-    for (i = 1; i < n; i++) {
-        if (arr[i] > max) {
-	    max = arr[i]; 
-	}
-}
-  
-    return max; 
-} 
-int lis(long int arr[], int n )  
-{  
-    long int lis[n];
-    
-   
-    lis[0] = 1;    
-    for (int i = 1; i < n; i++ )  
+#include <iostream>
+    using namespace std;
+    int largest(int m, int n) 
     { 
-        lis[i] = 1; 
-        for (int j = 0; j < i; j++ )   {
-            if (( arr[i] > arr[j]) && (lis[i] < (lis[j] + 1))) { 
-                lis[i] = lis[j] + 1; 
-	    }
-	}
-                
+        int maxx=n; 
+        int max = m; 
+        if (max>maxx){
+			 return max;
+		 }else{
+			 return maxx;
+		 }		   
+        
+    } 
+    int main ()
+    {
+        int n , i , cnt=0, com=1 ;
+        cin>>n;
+        int ar[n];
+        for(i=0;i<n;i++)
+        {
+            cin>>ar[i];
+            if(ar[i]>=ar[i-1])
+            {
+                cnt++;
+                com = largest(com,cnt);
+            }
+            else
+            {
+               cnt=1;
+            }
+        }
+        cout<<com<<endl;
+        return 0;
     }
-    return largest(lis,n); 
-}  
-int main(){
-	int n;
-	cin>>n;
-	long int a[n];
-	for(int i=0; i<n; i++)
-	{
-		cin>>a[i];
-	}
-	cout<<lis(a,n);
-	return 0;
-}
