@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int largest(int arr[], int n) 
+int largest(long int arr[], int n) 
 { 
     int i; 
       
@@ -16,9 +16,9 @@ int largest(int arr[], int n)
   
     return max; 
 } 
-int lis( int arr[], int n )  
+int lis(long int arr[], int n )  
 {  
-    int lis[n];
+    long int lis[n];
     
    
     lis[0] = 1;    
@@ -35,7 +35,7 @@ int lis( int arr[], int n )
 int main(){
 	int n;
 	cin>>n;
-	int a[n];
+	long int a[n];
 	for(int i=0; i<n; i++)
 	{
 		cin>>a[i];
