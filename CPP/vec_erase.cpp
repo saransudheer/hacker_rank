@@ -21,9 +21,12 @@ int main() {
         a.push_back(temp);
     } 
     cin>>b>>c>>d;
-    a.erase(a.begin()+b);
+    a.erase(a.begin()+b-1);
     a.erase(a.begin()+c-1,a.begin()+d-1);
     cout<<a.size()<<endl;
+    /*for(auto it=a.begin(); it !=a.end(); it++){
+        cout<<*it<<' ';
+    }*/
     for(int i=0; i<a.size(); i++){
         cout<<a[i]<<' ';
     }
