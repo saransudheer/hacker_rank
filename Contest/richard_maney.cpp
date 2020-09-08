@@ -9,8 +9,8 @@ int main() {
     li n;
     int count=0;
     cin>>n;
-    int a[6]={1,5,10,20,50,100};
-    int i=5;
+    int a[5]={1,5,10,20,100};
+    int i=4;
     while(i!= -1 || n!=0){        
         if(li(n/a[i])!=0){
             count += int(n/a[i]);
