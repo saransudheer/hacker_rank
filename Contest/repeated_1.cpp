@@ -1,15 +1,11 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-int MAX_INT(int arr[],int s)
-{
-    return max_element(arr, arr + s) - arr;
-}
 int main(){
-    int n,key, key1;
+    int n, key, key1;
 
     cin>>n;
-    int a[n], occ[n];
+    int a[n],b[n];
 
     for(int i=0; i<n; i++){
         cin>>a[i];
@@ -17,16 +13,25 @@ int main(){
     cin>>key1;
     sort(a,a+n);
     for(int i=0; i<n; i++){
-        key1=a[i];
-        auto it = lower_bound(a,a+n,key);
-        auto tt = upper_bound(a,a+n,key); 
-        occ[i]=((tt-a)-(it-a));
+        b[i]=a[i];
     }
-    bool present = binary_search(occ,occ+n,key1);
-    if(present=1){
-        
-        cout<<
+    int j=0;
+    bool g=true;
+    while(g==true && j<n){
+        key=b[j];
+        auto it = lower_bound(b,b+n,key);
+        auto tt = upper_bound(b,b+n,key); 
+        int occ=((tt-b)-(it-b));
+        if(occ==key1){
+            cout<<b[j];
+            g=false;
+        } 
+        else{
+            j++;
+        }
     }
+   
+    
    
     return 0;
  }
