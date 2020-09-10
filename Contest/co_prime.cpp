@@ -2,21 +2,12 @@
 #include <algorithm>
 using namespace std;
 typedef long int lli;
-lli gcd(lli x,lli y)  
-{  
-    int minimum = min(x, y); 
-    if (x % minimum == 0 && y % minimum == 0) 
-        return minimum; 
-    for (lli i = minimum / 2; i >= 2; i--) { 
-  
-        if (x % i == 0 && y % i == 0) 
-            return i; 
-    } 
-    return 1; 
-
-    //return gcd(b % a, a);  
-}  
-
+lli gcd(lli a, lli b) 
+{ 
+    if (a == 0) 
+        return b; 
+    return gcd(b % a, a); 
+} 
 lli countprime(lli n)  
 {  
     lli result = 1;  
@@ -28,6 +19,7 @@ lli countprime(lli n)
              
     return result;  
 }  
+
 
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
