@@ -3,10 +3,8 @@
 using namespace std;
 int main(){
     int n, key, key1;
-
     cin>>n;
     int a[n],b[n];
-
     for(int i=0; i<n; i++){
         cin>>a[i];
     }  
@@ -30,8 +28,6 @@ int main(){
             j++;
         }
     }
-   
-    
    
     return 0;
  }
