@@ -9,14 +9,15 @@ lli phi(lli n)
     ld result = n; // Initialize result as n 
     for (lli p = 2; p * p <= n; ++p) { 
         if (n % p == 0) { 
-            while (n % p == 0) 
+            while (n % p == 0) {
                 n /= p; 
+            }
             result *= (1.0 - (1.0 / (ld)p)); 
         } 
     } 
-    if (n > 1) 
+    if (n > 1) {
         result *= (1.0 - (1.0 / (ld)n)); 
-  
+    }
     return (lli)(ceil(result)); 
 } 
   
