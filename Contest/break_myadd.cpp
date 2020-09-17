@@ -8,17 +8,15 @@ lli solve(lli a){
     if (a==1){
         return 1;
     }
-    else if(a%2!=0 && a!=1){
-        return a+1;
-        exit(0);
-    }
-    else{
-        while(item>=1){
-            sum +=item;
-            item=int(item/2);
+    for(int i=0; i<10; i++){    
+        if(a%i==0 && a!=1){
+            while(item>=1){
+                sum +=item;
+                item=int(item/2);
+            }           
         }
-        return sum;
     }
+    return sum;
 }
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
