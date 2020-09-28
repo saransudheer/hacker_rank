@@ -56,27 +56,25 @@ void free_singly_linked_list(SinglyLinkedListNode* node) {
  *
  */
 SinglyLinkedListNode* insertNodeAtTail(SinglyLinkedListNode* head, int new_data) {
-	SinglyLinkedListNode* new_node = new SinglyLinkedListNode();  
+	SinglyLinkedListNode* new_node = (SinglyLinkedListNode*) malloc (sizeof(SinglyLinkedListNode)) ;  
     
-    // Used in step 5  
-    SinglyLinkedListNode *last = *head;  
+    new_node->next = NULL;  
     
     new_node->data = new_data;   
-    
+    SinglyLinkedListNode* temp = head;
     
     new_node->next = NULL;   
  
-    if (*head_ref == NULL)   
-    {   
-        *head_ref = new_node;   
-        return;   
+    if (head == NULL)   
+    {     
+        return new_node;   
     }   
-    
-    // 5. Else traverse till the last node  
-    while (last->next != NULL)   
-        last = last->next;   
-    last->next = new_node;   
-    return;   
+   
+    while (temp->next != NULL)   
+        temp = temp->next;   
+
+    temp->next = new_node;   
+    return head;   
 
 }
 
